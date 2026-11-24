@@ -1,0 +1,5 @@
+{
+  "epoch": 1795514440.7917905,
+  "observed": "API8/8 passes;native ui-text shows [object Object] because value selector points to full payload andlegacy format doesnotapply.",
+  "repair": "Native Change JSONata display expression,then ui-text reads display string;rule workflow unchanged."
+}

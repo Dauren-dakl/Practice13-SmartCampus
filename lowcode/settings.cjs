@@ -1,0 +1,2 @@
+const path = require("node:path");
+module.exports = { uiPort: 1880, uiHost: "127.0.0.1", httpAdminRoot: "/editor", httpNodeRoot: "/", flowFile: "flows.json", functionExternalModules: false, functionTimeout: 2, contextStorage: { default: { module: "memory" } }, editorTheme: { projects: { enabled: false } }, logging: { console: { level: "info", metrics: false, audit: false } }, httpStatic: [{ path: path.resolve(__dirname, "../code/dist"), root: "/code" }, { path: path.resolve(__dirname, "../code/dist/assets"), root: "/assets" }], exportGlobalContextKeys: false };

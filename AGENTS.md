@@ -1,0 +1,2 @@
+# Project constraints
+Preserve fictional bookings and shared acceptance contract. Keep availability deterministic. No LLM or external connectors. Never mutate bookings. Do not replace real Node-RED flow with a simulated HTML interface. Keep editor loopback-only. Never commit runtime .config files, flows_cred.json, .env, node_modules or tokens. Re-run code tests/lint/typecheck/build and the real runtime suite after rule changes. Update report evidence honestly; do not claim public deployment until verified.

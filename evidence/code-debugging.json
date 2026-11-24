@@ -1,0 +1,6 @@
+{
+  "issue": "TypeScript inferred T1-T7 literal union for array;T8 could not be appended. Tests and bundle passed but separate typecheck caught it.",
+  "repair": "Explicit general result-row array type;no rule change.",
+  "repair_and_recheck_seconds": 2.039,
+  "exit": 0
+}

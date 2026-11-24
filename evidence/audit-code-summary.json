@@ -1,0 +1,112 @@
+{
+  "counts": {
+    "info": 0,
+    "low": 1,
+    "moderate": 7,
+    "high": 10,
+    "critical": 2,
+    "total": 20
+  },
+  "packages": [
+    {
+      "name": "@eslint/plugin-kit",
+      "severity": "low",
+      "direct": false
+    },
+    {
+      "name": "@humanfs/node",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "@vitest/mocker",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "ajv",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "brace-expansion",
+      "severity": "high",
+      "direct": false
+    },
+    {
+      "name": "browserslist",
+      "severity": "high",
+      "direct": false
+    },
+    {
+      "name": "cross-spawn",
+      "severity": "high",
+      "direct": false
+    },
+    {
+      "name": "esbuild",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "flatted",
+      "severity": "high",
+      "direct": false
+    },
+    {
+      "name": "glob",
+      "severity": "high",
+      "direct": false
+    },
+    {
+      "name": "js-yaml",
+      "severity": "high",
+      "direct": false
+    },
+    {
+      "name": "minimatch",
+      "severity": "high",
+      "direct": false
+    },
+    {
+      "name": "picomatch",
+      "severity": "high",
+      "direct": false
+    },
+    {
+      "name": "postcss-selector-parser",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "tinypool",
+      "severity": "critical",
+      "direct": false
+    },
+    {
+      "name": "vite",
+      "severity": "high",
+      "direct": false
+    },
+    {
+      "name": "vite-node",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "vitest",
+      "severity": "critical",
+      "direct": true
+    },
+    {
+      "name": "ws",
+      "severity": "high",
+      "direct": false
+    },
+    {
+      "name": "yaml",
+      "severity": "moderate",
+      "direct": false
+    }
+  ]
+}

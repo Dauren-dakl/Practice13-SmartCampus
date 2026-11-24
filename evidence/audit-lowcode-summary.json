@@ -1,0 +1,187 @@
+{
+  "counts": {
+    "info": 0,
+    "low": 0,
+    "moderate": 35,
+    "high": 0,
+    "critical": 0,
+    "total": 35
+  },
+  "packages": [
+    {
+      "name": "@node-red/registry",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "@node-red/runtime",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "@npmcli/arborist",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "@npmcli/config",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "@npmcli/map-workspaces",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "@npmcli/metavuln-calculator",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "@npmcli/package-json",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "@npmcli/run-script",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "@sigstore/sign",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "@sigstore/tuf",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "@tufjs/models",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "cacache",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "glob",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "ignore-walk",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "init-package-json",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "libnpmaccess",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "libnpmdiff",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "libnpmexec",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "libnpmfund",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "libnpmorg",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "libnpmpack",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "libnpmpublish",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "libnpmsearch",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "libnpmteam",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "libnpmversion",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "make-fetch-happen",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "minimatch",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "node-red",
+      "severity": "moderate",
+      "direct": true
+    },
+    {
+      "name": "npm",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "npm-packlist",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "npm-profile",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "npm-registry-fetch",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "pacote",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "sigstore",
+      "severity": "moderate",
+      "direct": false
+    },
+    {
+      "name": "tuf-js",
+      "severity": "moderate",
+      "direct": false
+    }
+  ]
+}

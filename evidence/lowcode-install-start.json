@@ -1,0 +1,5 @@
+{
+  "started_epoch": 1795513572.896798,
+  "command": "npm install --ignore-scripts --no-audit --no-fund",
+  "packages": "node-red5.0.10 and FlowFuseDashboard1.37.0, exact versions"
+}

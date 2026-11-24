@@ -1,0 +1,100 @@
+[
+  {
+    "id": "T1",
+    "label": "Valid free interval",
+    "input": {
+      "start": 700,
+      "duration": 60,
+      "blocked": false
+    },
+    "expected": {
+      "availability": true,
+      "valid": true,
+      "reasonCode": "AVAILABLE"
+    }
+  },
+  {
+    "id": "T2",
+    "label": "Overlap existing booking",
+    "input": {
+      "start": 630,
+      "duration": 60,
+      "blocked": false
+    },
+    "expected": {
+      "availability": false,
+      "valid": true,
+      "reasonCode": "OVERLAP"
+    }
+  },
+  {
+    "id": "T3",
+    "label": "Blocked room",
+    "input": {
+      "start": 700,
+      "duration": 60,
+      "blocked": true
+    },
+    "expected": {
+      "availability": false,
+      "valid": true,
+      "reasonCode": "ROOM_BLOCKED"
+    }
+  },
+  {
+    "id": "T4",
+    "label": "Zero duration",
+    "input": {
+      "start": 700,
+      "duration": 0,
+      "blocked": false
+    },
+    "expected": {
+      "availability": false,
+      "valid": false,
+      "reasonCode": "INVALID_DURATION"
+    }
+  },
+  {
+    "id": "T5",
+    "label": "Duration121",
+    "input": {
+      "start": 700,
+      "duration": 121,
+      "blocked": false
+    },
+    "expected": {
+      "availability": false,
+      "valid": false,
+      "reasonCode": "INVALID_DURATION"
+    }
+  },
+  {
+    "id": "T6",
+    "label": "Past start",
+    "input": {
+      "start": 500,
+      "duration": 60,
+      "blocked": false
+    },
+    "expected": {
+      "availability": false,
+      "valid": false,
+      "reasonCode": "PAST_START"
+    }
+  },
+  {
+    "id": "T7",
+    "label": "Adjacent interval",
+    "input": {
+      "start": 660,
+      "duration": 60,
+      "blocked": false
+    },
+    "expected": {
+      "availability": true,
+      "valid": true,
+      "reasonCode": "AVAILABLE"
+    }
+  }
+]

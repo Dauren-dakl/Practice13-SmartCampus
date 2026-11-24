@@ -1,0 +1,424 @@
+{
+  "method": "Code-based actual TS module and real Node-RED HTTP/Link-Call workflow;no simulation",
+  "rows": [
+    {
+      "id": "T1",
+      "test": "Valid free interval",
+      "input": {
+        "start": 700,
+        "duration": 60,
+        "blocked": false
+      },
+      "expected": {
+        "availability": true,
+        "valid": true,
+        "reasonCode": "AVAILABLE"
+      },
+      "code": {
+        "availability": true,
+        "valid": true,
+        "reasonCode": "AVAILABLE",
+        "message": "Available. The requested interval is free; no booking has been created."
+      },
+      "lowcode": {
+        "availability": true,
+        "valid": true,
+        "reasonCode": "AVAILABLE",
+        "message": "Available. The requested interval is free; no booking has been created."
+      },
+      "codePass": true,
+      "lowcodePass": true,
+      "exactAgreement": true,
+      "lowcodeRoundtripMs": 8.78
+    },
+    {
+      "id": "T2",
+      "test": "Overlap existing booking",
+      "input": {
+        "start": 630,
+        "duration": 60,
+        "blocked": false
+      },
+      "expected": {
+        "availability": false,
+        "valid": true,
+        "reasonCode": "OVERLAP"
+      },
+      "code": {
+        "availability": false,
+        "valid": true,
+        "reasonCode": "OVERLAP",
+        "message": "Unavailable. The interval overlaps the existing 10:00-11:00 booking."
+      },
+      "lowcode": {
+        "availability": false,
+        "valid": true,
+        "reasonCode": "OVERLAP",
+        "message": "Unavailable. The interval overlaps the existing 10:00-11:00 booking."
+      },
+      "codePass": true,
+      "lowcodePass": true,
+      "exactAgreement": true,
+      "lowcodeRoundtripMs": 4.46
+    },
+    {
+      "id": "T3",
+      "test": "Blocked room",
+      "input": {
+        "start": 700,
+        "duration": 60,
+        "blocked": true
+      },
+      "expected": {
+        "availability": false,
+        "valid": true,
+        "reasonCode": "ROOM_BLOCKED"
+      },
+      "code": {
+        "availability": false,
+        "valid": true,
+        "reasonCode": "ROOM_BLOCKED",
+        "message": "Unavailable. Room B-204 is blocked."
+      },
+      "lowcode": {
+        "availability": false,
+        "valid": true,
+        "reasonCode": "ROOM_BLOCKED",
+        "message": "Unavailable. Room B-204 is blocked."
+      },
+      "codePass": true,
+      "lowcodePass": true,
+      "exactAgreement": true,
+      "lowcodeRoundtripMs": 2.64
+    },
+    {
+      "id": "T4",
+      "test": "Zero duration",
+      "input": {
+        "start": 700,
+        "duration": 0,
+        "blocked": false
+      },
+      "expected": {
+        "availability": false,
+        "valid": false,
+        "reasonCode": "INVALID_DURATION"
+      },
+      "code": {
+        "availability": false,
+        "valid": false,
+        "reasonCode": "INVALID_DURATION",
+        "message": "Enter a whole-number duration greater than 0 and at most 120 minutes."
+      },
+      "lowcode": {
+        "availability": false,
+        "valid": false,
+        "reasonCode": "INVALID_DURATION",
+        "message": "Enter a whole-number duration greater than 0 and at most 120 minutes."
+      },
+      "codePass": true,
+      "lowcodePass": true,
+      "exactAgreement": true,
+      "lowcodeRoundtripMs": 4.12
+    },
+    {
+      "id": "T5",
+      "test": "Duration121",
+      "input": {
+        "start": 700,
+        "duration": 121,
+        "blocked": false
+      },
+      "expected": {
+        "availability": false,
+        "valid": false,
+        "reasonCode": "INVALID_DURATION"
+      },
+      "code": {
+        "availability": false,
+        "valid": false,
+        "reasonCode": "INVALID_DURATION",
+        "message": "Enter a whole-number duration greater than 0 and at most 120 minutes."
+      },
+      "lowcode": {
+        "availability": false,
+        "valid": false,
+        "reasonCode": "INVALID_DURATION",
+        "message": "Enter a whole-number duration greater than 0 and at most 120 minutes."
+      },
+      "codePass": true,
+      "lowcodePass": true,
+      "exactAgreement": true,
+      "lowcodeRoundtripMs": 3.17
+    },
+    {
+      "id": "T6",
+      "test": "Past start",
+      "input": {
+        "start": 500,
+        "duration": 60,
+        "blocked": false
+      },
+      "expected": {
+        "availability": false,
+        "valid": false,
+        "reasonCode": "PAST_START"
+      },
+      "code": {
+        "availability": false,
+        "valid": false,
+        "reasonCode": "PAST_START",
+        "message": "Start must be strictly after the fixed current time, 09:00 (540)."
+      },
+      "lowcode": {
+        "availability": false,
+        "valid": false,
+        "reasonCode": "PAST_START",
+        "message": "Start must be strictly after the fixed current time, 09:00 (540)."
+      },
+      "codePass": true,
+      "lowcodePass": true,
+      "exactAgreement": true,
+      "lowcodeRoundtripMs": 3.12
+    },
+    {
+      "id": "T7",
+      "test": "Adjacent interval",
+      "input": {
+        "start": 660,
+        "duration": 60,
+        "blocked": false
+      },
+      "expected": {
+        "availability": true,
+        "valid": true,
+        "reasonCode": "AVAILABLE"
+      },
+      "code": {
+        "availability": true,
+        "valid": true,
+        "reasonCode": "AVAILABLE",
+        "message": "Available. The requested interval is free; no booking has been created."
+      },
+      "lowcode": {
+        "availability": true,
+        "valid": true,
+        "reasonCode": "AVAILABLE",
+        "message": "Available. The requested interval is free; no booking has been created."
+      },
+      "codePass": true,
+      "lowcodePass": true,
+      "exactAgreement": true,
+      "lowcodeRoundtripMs": 4.19
+    },
+    {
+      "id": "T8",
+      "test": "Booking data unchanged after checks",
+      "expected": "UNCHANGED",
+      "codePass": true,
+      "lowcodePass": true,
+      "codeBefore": "[{\"id\":\"b1\",\"title\":\"Intro to Algorithms\",\"start\":600,\"end\":660}]",
+      "codeAfter": "[{\"id\":\"b1\",\"title\":\"Intro to Algorithms\",\"start\":600,\"end\":660}]",
+      "lowcodeBefore": "[{\"id\":\"b1\",\"title\":\"Intro to Algorithms\",\"start\":600,\"end\":660}]",
+      "lowcodeAfter": "[{\"id\":\"b1\",\"title\":\"Intro to Algorithms\",\"start\":600,\"end\":660}]",
+      "exactAgreement": true
+    }
+  ],
+  "internalLowcodeSuite": [
+    {
+      "case": "T1",
+      "test": "Valid free interval",
+      "expected": "AVAILABLE",
+      "observed": "AVAILABLE",
+      "result": "PASS"
+    },
+    {
+      "case": "T2",
+      "test": "Overlap existing booking",
+      "expected": "OVERLAP",
+      "observed": "OVERLAP",
+      "result": "PASS"
+    },
+    {
+      "case": "T3",
+      "test": "Blocked room",
+      "expected": "ROOM_BLOCKED",
+      "observed": "ROOM_BLOCKED",
+      "result": "PASS"
+    },
+    {
+      "case": "T4",
+      "test": "Zero duration",
+      "expected": "INVALID_DURATION",
+      "observed": "INVALID_DURATION",
+      "result": "PASS"
+    },
+    {
+      "case": "T5",
+      "test": "Duration121",
+      "expected": "INVALID_DURATION",
+      "observed": "INVALID_DURATION",
+      "result": "PASS"
+    },
+    {
+      "case": "T6",
+      "test": "Past start",
+      "expected": "PAST_START",
+      "observed": "PAST_START",
+      "result": "PASS"
+    },
+    {
+      "case": "T7",
+      "test": "Adjacent interval",
+      "expected": "AVAILABLE",
+      "observed": "AVAILABLE",
+      "result": "PASS"
+    },
+    {
+      "case": "T8",
+      "test": "Booking data unchanged",
+      "expected": "UNCHANGED",
+      "observed": "UNCHANGED",
+      "result": "PASS"
+    }
+  ],
+  "security": [
+    {
+      "case": "empty",
+      "code": {
+        "availability": false,
+        "valid": false,
+        "reasonCode": "INVALID_START",
+        "message": "Enter a whole-number start from 0 to 1439 minutes."
+      },
+      "lowcode": {
+        "availability": false,
+        "valid": false,
+        "reasonCode": "INVALID_START",
+        "message": "Enter a whole-number start from 0 to 1439 minutes."
+      },
+      "agreement": true,
+      "inputEchoed": false
+    },
+    {
+      "case": "decimal",
+      "code": {
+        "availability": false,
+        "valid": false,
+        "reasonCode": "INVALID_START",
+        "message": "Enter a whole-number start from 0 to 1439 minutes."
+      },
+      "lowcode": {
+        "availability": false,
+        "valid": false,
+        "reasonCode": "INVALID_START",
+        "message": "Enter a whole-number start from 0 to 1439 minutes."
+      },
+      "agreement": true,
+      "inputEchoed": false
+    },
+    {
+      "case": "XSS-like literal",
+      "code": {
+        "availability": false,
+        "valid": false,
+        "reasonCode": "INVALID_START",
+        "message": "Enter a whole-number start from 0 to 1439 minutes."
+      },
+      "lowcode": {
+        "availability": false,
+        "valid": false,
+        "reasonCode": "INVALID_START",
+        "message": "Enter a whole-number start from 0 to 1439 minutes."
+      },
+      "agreement": true,
+      "inputEchoed": false
+    },
+    {
+      "case": "SQL-like literal",
+      "code": {
+        "availability": false,
+        "valid": false,
+        "reasonCode": "INVALID_START",
+        "message": "Enter a whole-number start from 0 to 1439 minutes."
+      },
+      "lowcode": {
+        "availability": false,
+        "valid": false,
+        "reasonCode": "INVALID_START",
+        "message": "Enter a whole-number start from 0 to 1439 minutes."
+      },
+      "agreement": true,
+      "inputEchoed": false
+    },
+    {
+      "case": "long literal",
+      "code": {
+        "availability": false,
+        "valid": false,
+        "reasonCode": "INVALID_START",
+        "message": "Enter a whole-number start from 0 to 1439 minutes."
+      },
+      "lowcode": {
+        "availability": false,
+        "valid": false,
+        "reasonCode": "INVALID_START",
+        "message": "Enter a whole-number start from 0 to 1439 minutes."
+      },
+      "agreement": true,
+      "inputEchoed": false
+    },
+    {
+      "case": "status type",
+      "code": {
+        "availability": false,
+        "valid": false,
+        "reasonCode": "INVALID_BLOCKED",
+        "message": "Room blocked must be a boolean value."
+      },
+      "lowcode": {
+        "availability": false,
+        "valid": false,
+        "reasonCode": "INVALID_BLOCKED",
+        "message": "Room blocked must be a boolean value."
+      },
+      "agreement": true,
+      "inputEchoed": false
+    },
+    {
+      "case": "120 boundary/end1440",
+      "code": {
+        "availability": true,
+        "valid": true,
+        "reasonCode": "AVAILABLE",
+        "message": "Available. The requested interval is free; no booking has been created."
+      },
+      "lowcode": {
+        "availability": true,
+        "valid": true,
+        "reasonCode": "AVAILABLE",
+        "message": "Available. The requested interval is free; no booking has been created."
+      },
+      "agreement": true,
+      "inputEchoed": false
+    },
+    {
+      "case": "day end exceeded",
+      "code": {
+        "availability": false,
+        "valid": false,
+        "reasonCode": "DAY_END_EXCEEDED",
+        "message": "The interval must end by minute 1440 (24:00)."
+      },
+      "lowcode": {
+        "availability": false,
+        "valid": false,
+        "reasonCode": "DAY_END_EXCEEDED",
+        "message": "The interval must end by minute 1440 (24:00)."
+      },
+      "agreement": true,
+      "inputEchoed": false
+    }
+  ],
+  "seconds": 0.123
+}

@@ -1,0 +1,18 @@
+{
+  "test": {
+    "exit": 0,
+    "seconds": 1.389
+  },
+  "lint": {
+    "exit": 0,
+    "seconds": 1.506
+  },
+  "typecheck": {
+    "exit": 0,
+    "seconds": 1.703
+  },
+  "build": {
+    "exit": 0,
+    "seconds": 2.183
+  }
+}

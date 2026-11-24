@@ -1,0 +1,27 @@
+{
+  "room": "B-204",
+  "now": 540,
+  "bookings": [
+    {
+      "id": "b1",
+      "title": "Intro to Algorithms",
+      "start": 600,
+      "end": 660
+    }
+  ],
+  "inputs": [
+    "start integer0..1439",
+    "duration integer1..120",
+    "blocked boolean"
+  ],
+  "outputs": [
+    "availability boolean",
+    "reasonCode",
+    "message",
+    "valid boolean"
+  ],
+  "T8": "Booking array and every booking remain unchanged after T1-T7.",
+  "timeBoundary": "start+duration<=1440;touching endpoints allowed",
+  "classification": "Validation errors use availabilityfalse/validfalse;blocked oroverlap isvalid request/unavailable.",
+  "frozen_before_implementation_epoch": 1795513752.0085413
+}

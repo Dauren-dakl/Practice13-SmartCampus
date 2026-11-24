@@ -1,0 +1,32 @@
+[
+  {
+    "name": "test",
+    "exit": 0,
+    "seconds": 1.12
+  },
+  {
+    "name": "lint",
+    "exit": 0,
+    "seconds": 1.487
+  },
+  {
+    "name": "typecheck",
+    "exit": 0,
+    "seconds": 1.667
+  },
+  {
+    "name": "build",
+    "exit": 0,
+    "seconds": 1.337
+  },
+  {
+    "name": "audit-code",
+    "exit": 1,
+    "seconds": 11.7
+  },
+  {
+    "name": "audit-lowcode",
+    "exit": 1,
+    "seconds": 13.547
+  }
+]

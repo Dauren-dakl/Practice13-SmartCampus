@@ -1,0 +1,9 @@
+# Hypothetical background task (not actually launched as a paid background agent)
+Goal: verify the current-request result and accessible time-field associations without changing the booking rules.
+Isolation: new task/a05-field-audit branch and worktree, or an isolated task copy of the checkpoint. Baseline immutable; no production credentials/database.
+Allowed files: src/App.tsx, src/App.audit.test.tsx, src/lib/audit-regression.test.ts, README.md, AGENTS.md and audit documents. No availability.ts, fixture, original tests, manifest, lockfile or styles.
+Safe commands: npm test, npm run lint/typecheck/build, npm audit --json, Node/npm versions, rg and git diff/status. Clean install only in a separate copy, ignore lifecycle scripts. Loopback/internal compiled-static preview only; no Vite/Vitest network exposure.
+Time limits:15minutes total,60seconds per check,90seconds clean install. Stop on timeout, port conflict, unexpected edits, unavailable baseline, changed criteria or failing acceptance. Never loop indefinitely or conceal partial execution.
+Prohibited: credential/private-data access, secrets, external writes/messages, destructive commands, dependency upgrades, force commands, publishing, deployment, automatic merge or approval of own patch.
+Artifacts: scope summary, proposed/reviewed diff, immutable checkpoint, command logs and pass/fail totals, build output, screenshots, risk notes and residual conditions. Explicitly list unexecuted tests.
+Review gate: human independently reviews the diff/evidence and approves a merge or deployment. Agent can recommend, not approve. If rejected or checks fail, retain evidence and reverse only reviewed edits in the isolated copy; verify baseline after rollback. Never hard reset/delete an unknown checkout. No paid background-agent access is required for this design exercise.

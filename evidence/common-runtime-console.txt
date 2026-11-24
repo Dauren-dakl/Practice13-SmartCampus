@@ -1,0 +1,8 @@
+{
+  "codePassed": 8,
+  "lowcodePassed": 8,
+  "agreement": true,
+  "lowcodeInternalPassed": 8,
+  "seconds": 0.123,
+  "securityAgreement": true
+}

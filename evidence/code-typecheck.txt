@@ -1,0 +1,7 @@
+
+> vite-react-typescript-starter@0.0.0 typecheck
+> tsc --noEmit -p tsconfig.app.json
+
+src/lib/duration-contract.ts(50,15): error TS2322: Type '"T8"' is not assignable to type '"T1" | "T2" | "T3" | "T4" | "T5" | "T6" | "T7"'.
+src/lib/duration-contract.ts(50,25): error TS2322: Type '"Booking data unchanged"' is not assignable to type '"Valid free interval" | "Overlap existing booking" | "Blocked room" | "Zero duration" | "Duration 121" | "Past start" | "Adjacent interval"'.
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
