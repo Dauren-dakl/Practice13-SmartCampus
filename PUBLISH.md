@@ -1,6 +1,8 @@
-# Public hosting
-The public repository contains the full source and report.
+# Публикация проекта
 
-The code-based demo is ready as docs/index.html (self-contained, no API keys). To publish on GitHub Pages: Settings > Pages > Deploy from a branch > main > /docs > Save. Verify the generated site URL before calling it a live demo.
+Репозиторий: https://github.com/Dauren-dakl/Practice13-SmartCampus
+Работающее демо версии с кодом: https://dauren-dakl.github.io/Practice13-SmartCampus/
 
-The low-code demo is the actual Node-RED flow; it cannot run on GitHub Pages. Reproduce locally using README or use a Node-compatible server with editor authentication and TLS. Do not expose the supplied loopback-only unauthenticated editor. No public low-code host is claimed.
+GitHub Pages публикует docs/index.html из main. На опубликованной странице проверены решение для свободного интервала и все 8 общих тестов: 8/8 PASS.
+
+Low-code версия использует настоящий Node-RED и запускается локально по инструкции README. GitHub Pages не запускает Node-RED. Публичная low-code версия не размещена; экспорт flows.json приложен. Для её размещения нужен Node-совместимый сервер с аутентификацией редактора и HTTPS.

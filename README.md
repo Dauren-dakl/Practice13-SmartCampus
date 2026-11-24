@@ -6,7 +6,7 @@ Submission subject: AI-Driven Software Engineering Practice #13, Shaldarbek Daur
 The source brief is Lesson 12; its submission section explicitly says Practice #13.
 
 ## Status
-Both real local implementations pass the same eight acceptance checks. Code has 36 passing automated tests. Public repository destination: https://github.com/Dauren-dakl/Practice13-SmartCampus. Public live hosting is NOT yet completed. Local URLs below are not public demo links. Do not submit this package as fully published until public live hosting is resolved.
+Both real local implementations pass the same eight acceptance checks. Code has 36 passing automated tests. Public repository destination: https://github.com/Dauren-dakl/Practice13-SmartCampus. Public code demo: https://dauren-dakl.github.io/Practice13-SmartCampus/ (verified 8/8 common tests). The real low-code Node-RED runtime remains local; no public low-code host is claimed. Local URLs below are not public demo links. The code demo is published; the low-code reproduction is local, with the real flow export supplied.
 
 ## Reproduce (Node.js 24 used)
 1. In code/: npm ci; npm test; npm run lint; npm run typecheck; npm run build.
@@ -41,7 +41,7 @@ Both: 8/8 common tests. Code: custom React UI and direct TS tests, explicit boun
 ChatGPT/Codex assisted requirements extraction, TS adapter/UI, Node-RED flow JSON, tests and documentation. Exact model/version is not exposed by this session; not invented. Human student should review and explain both implementations. AI initially produced a T8 array typing error caught by separate typecheck, and a low-code object-to-text binding error caught visually despite API tests passing. Both were corrected and rechecked. This is why test output and visible UI were reviewed separately.
 
 ## Publish checklist
-Create/use a public repository dedicated to this practice and upload this complete tree, including report, source, flow, tests and screenshots. No secrets or node_modules. Enable a static public demo for code/dist; deploy the real Node-RED backend on an appropriately secured Node-compatible host if a low-code live demo is required. A static clone of its UI does not count as the real low-code runtime. Add verified public URLs to the report/README before final submission. Do not send ZIP/WinRAR or OneDrive links.
+Public repository is populated at https://github.com/Dauren-dakl/Practice13-SmartCampus, including report, source, flow, tests and screenshots. No secrets or node_modules. The static demo is live on GitHub Pages at the URL above. Deploy the real Node-RED backend on an appropriately secured Node-compatible host if a low-code live demo is required. A static clone of its UI does not count as the real low-code runtime. Verified code demo and repository URLs are included in the report/README. Do not send ZIP/WinRAR or OneDrive links.
 
 ## References
 https://nodered.org/about/
